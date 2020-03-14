@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<beans 
+
+    xmlns="http://www.springframework.org/schema/beans"  
+
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+
+    xmlns:p="http://www.springframework.org/schema/p" 
+
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+
+ 
+
+<bean id="a1" class="springexamples.Addr"> 
+
+<constructor-arg value="Sattenapalli"></constructor-arg> 
+
+<constructor-arg value="AndhraPradesh"></constructor-arg> 
+
+<constructor-arg value="India"></constructor-arg> 
+
+</bean> 
+
+ 
+
+ 
+
+<bean id="e" class="springexamples.Emp"> 
+
+<constructor-arg value="844334" type="int"></constructor-arg> 
+
+<constructor-arg value="Anuja"></constructor-arg> 
+
+<constructor-arg> 
+
+<ref bean="a1"/> 
+
+</constructor-arg>
+
+ 
+
+ 
+
+<constructor-arg>
+
+<map>
+
+<entry key="1"  value="CTS"></entry>
+
+<entry key="2" value="PAT"></entry>
+
+<entry key="3" value="JAVA"></entry>
+
+</map>
+
+</constructor-arg> 
+
+ 
+
+</bean> 
+
+ 
+
+</beans> 
