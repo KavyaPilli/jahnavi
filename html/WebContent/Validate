@@ -1,0 +1,31 @@
+<script type="text/javascript">
+		function calculateFeedbackRating()
+		{
+			var feedback = document.getElementById("fb").value;
+            var trainer = document.getElementById("tname").value;
+            var feedbackrate="";
+                        
+            if(feedback == "Excellent")
+            {
+                feedbackrate = 5;
+            }
+            else if(feedback == "Very Good")
+            {
+                feedbackrate = 4;
+            }
+            else if(feedback == "Good")
+            {
+                feedbackrate = 3;
+            }
+            else if(feedback == "Average")
+            {
+                feedbackrate = 2;
+            }
+            else if(feedback == "Below Average")
+            {
+                feedbackrate = 1;
+            }
+            document.getElementById("result").innerHTML = "Feedback rating of "+trainer+" is "+feedbackrate;
+            return false;
+		}
+	</script>
