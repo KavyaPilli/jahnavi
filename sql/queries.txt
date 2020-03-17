@@ -1,0 +1,72 @@
+3 types of quries
+1.root
+2. parent
+3.child
+
+1.Root query : independent of other codition
+2.parent query:query which depend on other query
+3.child query :
+==========
+
+select ename from emp where deptno=(select loc from dept where loc='chicago' and loc='boston';
+select ename from emp where deptno=(select loc from dept where loc in('chicago','boston'));
+
+============================
+//display details of emp who salary is < salary of emp with id=7566
+ select sal from emp where sal<(select sal from emp where empno='7566');
+=================
+//display the details of employee whos details r same as ford
+ select * from emp where job=(select job from emp where ename='ford');
+ ====================
+//display the emp details whose r seniors to miller in the order of salary;
+select * from emp  where hiredate < (select hiredate from emp where ename='miller') order by sal;
+======================
+// display the sal+comm of employees who r working in chicago location abd who had the comission
+select ENAME,sal+coalesce(comm,0) from emp where deptno=(select deptno from dept where loc='chicago');  
+======================
+//display all the details of employees in the ford working dept
+
+ select * from emp where deptno=(select deptno from emp where ename='ford');
+=========================
+//diplay the empname getting highest salary
+select ename,sal from emp where sal=(select max(sal) from emp);
+===========================
+//display the details whose salary  is less than the avg salary of company
+select * emp where sal<(select avg(sal) from emp);
+============================
+//display the employee details who r getting max salaries from the respective dept
+select ename,deptno,max(sal) from emp group by deptno;
+                  (or )
+select * from emp where sal=(select max(sal) from emp) group by deptno ;
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//SQL QUERIES USING JOIN
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//to create a customer table
+create table customers (cid varchar(10) not null primary key,
+                        cname varchar(10),
+                        contactname varchar(10),
+                        country varchar(10));
+=========================================================
+//to create a order table
+create table orders (oid varchar(10) not null primary key,
+                        cid varchar(10),
+                        odate varchar(10),
+                        foreign key(cid) references customers(cid));
+================================================================
+//inserting into orders table
+insert into orders values('10308','2','1996-09-18');
+
+insert into orders values('10309','37','1996-09-19');
+
+insert into orders values('10310','77','1996-09-20');
+==============================================================
+//inserting values into customers table
+insert into customers values('1','Alfreds','Maria','Germany');
+
+insert into customers values('2','Anas','Trujillo','Mexico');
+
+insert into customers values('3','Moreno','Antonio','Mexico');
+================================================================

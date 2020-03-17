@@ -1,0 +1,42 @@
+//to find numeric lengthuse length(str),for character length we use char_length(str)
+select length(empno) from emp;
+select char_length(empno) from emp;
+========================================
+//to find first left charaters  
+left(col,charcater length);
+eg:select left(job,3) from emp;
+========================================
+//here position is any +ve means refernces from right to left -ve means references from right to left
+syntax:substring(string,position);
+=======================================
+//remover unwanted chars
+
+=======================================
+//find in set is case sensitive
+select find_in_set('y','x,y,z');-->returns 2 (index value)
+======================================
+//format use to store data in form of currencies
+format(n,d,locale);
+n->number to be formatted
+d->deciman digits
+locale->format i.e.., us,uk;
+======================================
+//system current date
+select curdate();
+   (or)
+select sysdate();
+=====================================
+//like operator
+SELECT ename from emp where ename like 'a%';
+====================================
+select weekday(curdate());
+====================================
+select ename from emp where (sal>=1000)&&(sal<=2000);
+//we can also develop above statement using between;
+select ename,sal from emp where sal not between 100 and 2000;
+============================================================
+//between or not between works for numberic data and in or not in use for string data 
+select ename,job from emp where job='clerk' or job='salesman';
+                              (or)
+select ename,job from emp where job in ('clerk','salesman');
+==============================================================
