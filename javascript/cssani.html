@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+div{ 
+    width:0px;
+    height:0px;
+    position:relative;
+    animation-name:circle;
+    animation-duration:4s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count:5;
+}
+@keyframes circle
+{
+from {background-color:pink;}
+to {background-color:yellow;}
+}
+@keyframes circle
+{
+0% {background-color:red; left:0px; top:0px}
+25% {background-color:black; left:200px; top:0px}
+50% {background-color:yellow; left:200px; top:200px}
+75% {background-color:green; left:0px; top:200px}
+100% {background-color:pink; left:0px; top:0px}
+</style>
+</head>
+<body>
+<div>
+<svg xmlns="http://www.w3c.org/2000/svg">
+
+<circle cx=100 cy=50 r=50  stroke="red" fill="blue"/>
+</svg>
+
+ </div>
+</body>
+</html>
+ 

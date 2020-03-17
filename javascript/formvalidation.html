@@ -1,0 +1,42 @@
+<html>
+ <head>
+  <style>
+   table,tb
+   {
+     border:5px solid black;
+     background-color:pink;
+  }
+  </style>
+ </head>
+<form>
+ <body>
+ <table align="center">
+ <tr><td> Name</td><td><input type="text" name="uname" id="uname"><br>
+  <tr><td>Email</td><td><input type="email" name="uemail" id="uemail"><br>
+  <tr><td>Dob</td><td><input type="date" name="uname" id="udob"><br>
+  <tr><td>Gender</td><td><input type="radio" name="gender" value="Male">Male<br>
+               <input type="radio" name="gender" value="female">Female<br>
+ <tr><td>zipcode</td><td><input type="zipcode" name="uzip" name="uzip"><br>
+  <tr><td>country</td><td>
+   <select>
+       <option> </option>
+       <option>INDIA</option>
+      <option>USA</option>
+      <option>UK</option>
+      <option>JAPAN</option>
+        
+  </select></td><br>
+  <tr><td><input type="submit" value="submit" onclick="validtion()"/>
+ </table>
+ </form> 
+ <script>
+   var usr=document.getElementById("uname");
+   var len=usr.length;
+   if(len==0)
+   {
+    document.write("Mandatory fileds should be filled"); 
+   }
+   
+ </script>
+</body>
+</html>

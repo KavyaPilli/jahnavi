@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script>
+     function createList()
+     {
+      var a=document.createElement("ol");
+      var l1=document.createElement("li");
+      var data1=document.createTextNode("india");
+      l1.appendChild(data1);
+     
+
+   
+      var l2=document.createElement("li");
+      var data2=document.createTextNode("chaina");
+ l2.appendChild(data2);
+
+      var l3=document.createElement("li");
+      var data3=document.createTextNode("japan");
+ l3.appendChild(data3);
+ a.appendChild(l1);
+ a.appendChild(l2);
+    a.appendChild(l3);
+
+ document.body.appendChild(a);
+
+     }
+    </script>
+  </head>
+  <body>
+  
+<button onclick="createList()">createlist</button>
+
+</html>

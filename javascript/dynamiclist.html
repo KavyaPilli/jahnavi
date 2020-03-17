@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script>
+var a=document.createElement("ol");
+     function dynamicList()
+     {
+        
+      var l1=document.createElement("li");
+        var x=document.getElementById("uid").value;
+      var data=document.createTextNode(x);
+      l1.appendChild(data);
+      a.appendChild(l1);
+    document.body.appendChild(a);
+
+     }
+    </script>
+  </head>
+  <body>
+  <input type="text" name="inp" id="uid">
+<button onclick="dynamicList()">createlist</button>
+
+</html>

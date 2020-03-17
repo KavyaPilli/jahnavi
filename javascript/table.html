@@ -1,0 +1,41 @@
+ <html>
+  <head>
+<style>
+table,td
+{
+ border:1px solid black;
+}
+</style>
+
+ </head>
+  <body>
+
+<table>
+<tr><td>Enter employee number</td><td><input type="text" name="empnum" id="uid"></td></tr>
+<tr><td>Enter Employee Name</td><td><input type="text" name="empname" id="unam"></td></tr>
+<tr><td>Enter employee technology</td><td><input type="text" name="emptech" id="utech"></td></tr>
+<tr><td><button onclick="dynamicTable()">createlist</button></td></tr>
+</table>
+<br>
+
+<table id="mytable">
+</table>
+
+    <script>
+var table=document.getElementById("mytable");
+
+     function dynamicTable()
+     {
+        
+      var row=table.insertRow();
+      var c1=row.insertCell(0);
+      var c2=row.insertCell(1);
+      var c3=row.insertCell(2);
+      c1.innerHTML=document.getElementById("uid").value;
+      c2.innerHTML=document.getElementById("unam").value;
+      c3.innerHTML=document.getElementById("utech").value;
+    
+     }
+    </script>
+ 
+</html>

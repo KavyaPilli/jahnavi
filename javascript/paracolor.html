@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script>
+      function changePara()
+       { 
+          var arr=document.getElementsByTagName("p");			
+         arr[0].style.color="green";
+          arr[1].style.color="yellow";
+          arr[1].align="center";
+       }
+    </script>
+  </head>
+  <body>
+    <p style="color:red">This is my first para</p>
+<p style="color:blue">This is my second para</p>
+    <input type="submit" value="change" onclick="changePara()"/>
+
+</body>
+</html>

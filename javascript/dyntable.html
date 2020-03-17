@@ -1,0 +1,55 @@
+<html>
+  <head>
+   <style>
+      table,td
+       {
+       border:1px solid black;
+         }
+   </style>
+
+  </head>
+  <body>
+    <table>
+      <tr><td>Enter ID</td><td><input type="text" name="uid" id="uid"></tr>
+      <tr><td>Enter name</td><td><input type="text" name="uname" id="uname"></tr>
+      <tr><td>Enter tech</td><td><input type="text" name="utech" id="utech"></tr>
+      <tr><td><button onclick="dynamicList()">createlist</button>
+    </table>
+
+<table id="mytable">
+
+</table>
+
+    <script>
+
+
+     function dynamicList()
+     {
+        var a=document.createElement("tr");
+        var l1=document.createElement("td");
+        var x=document.getElementById("uid").value;
+        var data1=document.createTextNode(x);
+        l1.appendChild(data1);
+        a.appendChild(l1);
+        document.body.appendChild(a);
+   
+
+        var l2=document.createElement("td");
+        var y=document.getElementById("uname").value;
+        var data2=document.createTextNode(y);
+        l2.appendChild(data2);
+        a.appendChild(l2);
+        document.body.appendChild(a);
+      
+
+        var l3=document.createElement("td");
+        var z=document.getElementById("utech").value;
+        var data3=document.createTextNode(z);
+        l3.appendChild(data3);
+        a.appendChild(l3);
+        document.body.appendChild(a);
+        mytable.appendChild(a);
+     }
+    </script>
+</body>
+</html>
